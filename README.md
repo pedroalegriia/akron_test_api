@@ -14,17 +14,19 @@ Backend test akron test api.
 
 1. Copy `.env.example` to `.env` and adjust DB settings if needed.
 
-2. Start with Docker:
+2. Run npm install.
+
+```bash
+npm install
+```
+
+3. Start with Docker:
 
 ```bash
 docker-compose up --build
 ```
 
-It is not necessary to run npm install, but it is required to do so.
 
-```bash
-npm install
-```
 ## Rest Endpoints
 
 API will be on http://localhost:3000/api for api 
