@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: arkon_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./src/infrastructure/database/migrations:/docker-entrypoint-initdb.d
+
+  api:
+    build: .
+    environment:
+      - PORT=3000
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_DATABASE=arkon_db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql

@@ -1,0 +1,1625 @@
+{
+	"info": {
+		"_postman_id": "9c2c23f1-19f8-4324-9797-863585b25552",
+		"name": "akron_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39069999"
+	},
+	"item": [
+		{
+			"name": "graphql",
+			"item": [
+				{
+					"name": "data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"query { getEvent(id: 1) { id name start_date end_date total_tickets tickets_sold tickets_redeemed } }\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"query { getEvent(id: 6) { id name start_date end_date total_tickets tickets_sold tickets_redeemed } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-RPhyNW4+dRPqBfUIVaAA7FhDo/w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 17:39:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"getEvent\": {\n            \"id\": 6,\n            \"name\": \"Rock Festival 2027\",\n            \"start_date\": \"1762992000000\",\n            \"end_date\": \"1797033600000\",\n            \"total_tickets\": 200,\n            \"tickets_sold\": 2,\n            \"tickets_redeemed\": 2\n        }\n    }\n}"
+						},
+						{
+							"name": "create event",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { createEvent(name: \\\"Concierto Surf\\\", start_date: \\\"2025-11-13\\\", end_date: \\\"2026-12-02\\\", total_tickets: 100) { id name start_date end_date total_tickets tickets_sold tickets_redeemed } }\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-FCEx6WStSji79QvXY4mw4McjgL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 17:45:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createEvent\": {\n            \"id\": \"10\",\n            \"name\": \"Concierto Rock\",\n            \"start_date\": \"2025-11-13\",\n            \"end_date\": \"2026-12-02\",\n            \"total_tickets\": 100,\n            \"tickets_sold\": 0,\n            \"tickets_redeemed\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "update event",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { updateEvent(id: 10, name: \\\"Concierto Rock - updated\\\", total_tickets: 150) { id name start_date end_date total_tickets tickets_sold tickets_redeemed } }\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b9-DsPtIdaEdax6U2cmAcCDNJKxnyQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 17:54:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateEvent\": {\n            \"id\": \"10\",\n            \"name\": \"Concierto Rock - updated\",\n            \"start_date\": \"1764547200000\",\n            \"end_date\": \"1764633600000\",\n            \"total_tickets\": 150,\n            \"tickets_sold\": 0,\n            \"tickets_redeemed\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "error delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { deleteEvent(id: 3) { success message errors { field message } } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-vIbz4RzNXDchROjZvQm41LWnP0I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 18:49:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteEvent\": {\n            \"success\": false,\n            \"message\": \"Validation failed\",\n            \"errors\": [\n                {\n                    \"field\": \"id\",\n                    \"message\": \"Cannot delete event: either it must have finished or have zero tickets sold\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "delete success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { deleteEvent(id: 10) { success message errors { field message } } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5d-nFU3KUJRij83Pc405XGFdL1Oi6w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 18:50:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteEvent\": {\n            \"success\": true,\n            \"message\": \"Event deleted successfully\",\n            \"errors\": []\n        }\n    }\n}"
+						},
+						{
+							"name": "sell ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { sellTicket(eventId: 13) { id code event_id is_redeemed } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"76-Ru2T6Y9OHwI0CP2uYksLdMXujVw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 18:51:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"sellTicket\": {\n            \"id\": \"8\",\n            \"code\": \"TCK-793b0661-d9f9-4391-8e2d-ad71e4987e25\",\n            \"event_id\": 3,\n            \"is_redeemed\": false\n        }\n    }\n}"
+						},
+						{
+							"name": "error redeem ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { redeemTicket(code: \\\"TCK-793b0661-d9f9-4391-8e2d-ad71e4987e25\\\") { success message errors { field message } ticket { id code event_id is_redeemed } } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-rzUoTMB1GYW4pR55+vYNP3Qx6qE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 18:57:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"redeemTicket\": {\n            \"success\": false,\n            \"message\": \"Validation failed\",\n            \"errors\": [\n                {\n                    \"field\": \"code\",\n                    \"message\": \"Cannot redeem outside event dates\"\n                }\n            ],\n            \"ticket\": null\n        }\n    }\n}"
+						},
+						{
+							"name": "success redeem ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"query\": \"mutation { redeemTicket(code: \\\"TCK-c9a36a69-3653-4213-8444-656eb3cbbd17\\\") { success message errors { field message } ticket { id code event_id is_redeemed } } }\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-7GPxt0Wn51SgMGGvic7BrTndm2w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Nov 2025 19:01:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"redeemTicket\": {\n            \"success\": true,\n            \"message\": \"Ticket redeemed successfully\",\n            \"errors\": null,\n            \"ticket\": {\n                \"id\": \"11\",\n                \"code\": \"TCK-c9a36a69-3653-4213-8444-656eb3cbbd17\",\n                \"event_id\": 13,\n                \"is_redeemed\": true\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "create event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Rock Festival 2027\",\n  \"start_date\": \"2025-11-13\",\n  \"end_date\": \"2026-12-12\",\n  \"total_tickets\": 301\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rock Festival 2027\",\n  \"start_date\": \"2025-11-13\",\n  \"end_date\": \"2026-12-12\",\n  \"total_tickets\": 200\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a-Y307uwKKEPR5nyAR4LgDqY0tkWU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:39:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"name\": \"Rock Festival 2027\",\n    \"start_date\": \"2025-11-13\",\n    \"end_date\": \"2026-12-12\",\n    \"total_tickets\": 200\n}"
+				},
+				{
+					"name": "error dates",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rock Festival 2027\",\n  \"start_date\": \"2025-11-11\",\n  \"end_date\": \"2026-12-12\",\n  \"total_tickets\": 200\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7d-SVI0Y7oIb+aUsQ2Nmdu7Dp7uaFc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:40:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"end_date\",\n            \"message\": \"Start date must be today or later\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "error total tickets",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rock Festival 2027\",\n  \"start_date\": \"2025-11-13\",\n  \"end_date\": \"2026-12-12\",\n  \"total_tickets\": 301\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-o9o1jkYJKy0mebI6voVMVntOg58\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:41:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"total_tickets\",\n            \"message\": \"Total tickets must be between 1 and 300\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Rock Festival 2026 - Updated\",\n  \"total_tickets\": 500\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/events/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sucess",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rock Festival 2026 - Updated\",\n  \"total_tickets\": 199\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/events/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "144"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"90-8Z0QbAOgYs/UDfxJOnhuUcb9kBk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:51:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Rock Festival 2026 - Updated\",\n    \"start_date\": \"2025-12-15T00:00:00.000Z\",\n    \"end_date\": \"2026-12-12T00:00:00.000Z\",\n    \"total_tickets\": 199\n}"
+				},
+				{
+					"name": "error tickets",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Rock Festival 2026 - Updated\",\n  \"total_tickets\": 500\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/events/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"4"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-o9o1jkYJKy0mebI6voVMVntOg58\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:51:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"total_tickets\",\n            \"message\": \"Total tickets must be between 1 and 300\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Event Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/events/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sucess",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b6-Is+KhKuPkclTuHGybzbm4a8Dk0Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:53:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Rock Festival 2026 - Updated\",\n    \"start_date\": \"2025-12-15T00:00:00.000Z\",\n    \"end_date\": \"2026-12-12T00:00:00.000Z\",\n    \"total_tickets\": 199,\n    \"tickets_sold\": 1,\n    \"tickets_redeemed\": 0\n}"
+				},
+				{
+					"name": "invalidate id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/rtrt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"rtrt"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-XCwLCyYEoQi+CAC7813ndNnxBIU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 15:56:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"id\",\n            \"message\": \"Invalid event ID\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "event no found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"1000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-KwhhUFtxLZpuE/hwcOvvTaYLVos\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:35:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"id\",\n            \"message\": \"Event not found\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "delete event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/events/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "event not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"3000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-KwhhUFtxLZpuE/hwcOvvTaYLVos\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:47:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"id\",\n            \"message\": \"Event not found\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Cannot delete event",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-kgF0PPFES/4hwMgKgJkrb6EXzgY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:47:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"id\",\n            \"message\": \"Cannot delete event: either it must have finished or have zero tickets sold\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "sell",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/events/6/sell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"events",
+						"6",
+						"sell"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/events/6/sell",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"events",
+								"6",
+								"sell"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-q42I9/i0GNistPRc1SP1XI95o14\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:53:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Operation successful\",\n    \"data\": {\n        \"message\": \"Ticket sold\",\n        \"ticket\": {\n            \"id\": 3,\n            \"event_id\": 4,\n            \"code\": \"TCK-be9f98bf-a37c-4d67-a511-77f1803919fc\",\n            \"is_redeemed\": false\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Redeem ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/TCK-e2b3a7be-0ff7-4410-a336-8ee58bbfa1b1/redeem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"TCK-e2b3a7be-0ff7-4410-a336-8ee58bbfa1b1",
+						"redeem"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cannot redeem outside event dates",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/tickets/TCK-be9f98bf-a37c-4d67-a511-77f1803919fc/redeem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tickets",
+								"TCK-be9f98bf-a37c-4d67-a511-77f1803919fc",
+								"redeem"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-D0kbaVQdwLDrY6hxomahTwgRLQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:54:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"code\",\n            \"message\": \"Cannot redeem outside event dates\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Ticket already redeemed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/tickets/TCK-8bea3ec2-7985-49d0-baa9-3128057a45d3/redeem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tickets",
+								"TCK-8bea3ec2-7985-49d0-baa9-3128057a45d3",
+								"redeem"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "111"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6f-L8K0Msm4uYnMZ/ELjmcDc+Xo8Oc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:56:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"code\",\n            \"message\": \"Ticket already redeemed\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Redeem ticket success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/tickets/TCK-e2b3a7be-0ff7-4410-a336-8ee58bbfa1b1/redeem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tickets",
+								"TCK-e2b3a7be-0ff7-4410-a336-8ee58bbfa1b1",
+								"redeem"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "196"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c4-fFPZHKtkdJTG0uWaYrtvLw+fVVk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:57:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Ticket redeemed successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"event_id\": 6,\n        \"code\": \"TCK-e2b3a7be-0ff7-4410-a336-8ee58bbfa1b1\",\n        \"is_redeemed\": true,\n        \"redeemed_at\": \"2025-11-13T16:57:47.000Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
